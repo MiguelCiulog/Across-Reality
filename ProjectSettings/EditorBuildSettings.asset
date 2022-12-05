@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesertLevelScene.unity
     guid: c21958d738ff4bd46a95e3f0d501ab08
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e21d903c17288b74d8f4200cd9d0e084, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6664587aac810ee4497d4274a38c2869, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b64978fcd6f3fdf48abc06a4e4da389f, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 7aebe67b0bd7a014c85473fde0c56606, type: 2}
