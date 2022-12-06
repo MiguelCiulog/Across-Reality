@@ -5,6 +5,7 @@ using UnityEngine;
 public class BarHandler : MonoBehaviour
 {
     public GameObject bars;
+    public GameObject trophy;
     private bool isBarDown = false;
     public int numberOfActiveButtons = 0;
     public void HandleBars()
@@ -12,15 +13,18 @@ public class BarHandler : MonoBehaviour
         if (numberOfActiveButtons >= 3)
         {
             Vector3 newPos = (Vector3.down);
-            Debug.Log(newPos);
             bars.transform.Translate(newPos, Space.World);
             isBarDown = true;
+            Rigidbody rb_trophy = trophy.GetComponent<Rigidbody>();
+            rb_trophy.constraints = RigidbodyConstraints.None;
         }
         else if (numberOfActiveButtons != 3 && isBarDown == true)
         {
             isBarDown = false;
             Vector3 newPos = (Vector3.up);
             bars.transform.Translate(newPos, Space.World);
+            Rigidbody rb_trophy = trophy.GetComponent<Rigidbody>();
+            rb_trophy.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
