@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesertLevelScene.unity
     guid: c21958d738ff4bd46a95e3f0d501ab08
+  - enabled: 1
+    path: Assets/Scenes/ForestLevelScene.unity
+    guid: cf7a0f8983b9279488aa741d50ed96fa
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e21d903c17288b74d8f4200cd9d0e084, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6664587aac810ee4497d4274a38c2869, type: 2}

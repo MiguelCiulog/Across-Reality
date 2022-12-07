@@ -39,7 +39,6 @@ public class DragDrop : MonoBehaviour
                     return;
                 }
                 focus = hit.collider.transform;
-                Debug.Log(focus.tag);
                 if (hit.transform.tag != "Interactable")
                 {
                     return;

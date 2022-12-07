@@ -23,7 +23,7 @@ public class ModifyTextMeshPro : MonoBehaviour
         }
         if (challengeType == "resta")
         {
-            numero = UnityEngine.Random.Range(1, 10);
+            numero = UnityEngine.Random.Range(1, 8);
             numeroReto.text = "" + numero;
         }
         if (challengeType == "multiplicacion")

@@ -10,6 +10,7 @@ public class KeypadX : MonoBehaviour
     public TMP_Text mensaje;
     public TMP_Text numeroReto;
     public string challenge;
+    public BarHandler bh;
     private void Start()
     {
         numeroX.text = "X";
@@ -49,6 +50,7 @@ public class KeypadX : MonoBehaviour
             if (numero == (num1 + num2))
             {
                 mensaje.text = "¡COMPLETADO!";
+                bh.addNumberOfActiveButtons();
             }
         }
         if (challenge == "multiplicacion")
@@ -56,6 +58,7 @@ public class KeypadX : MonoBehaviour
             if (numero == (num1 * num2))
             {
                 mensaje.text = "¡COMPLETADO!";
+                bh.addNumberOfActiveButtons();
             }
         }
         if (challenge == "resta")
@@ -63,6 +66,7 @@ public class KeypadX : MonoBehaviour
             if (numero == (num1 - num2))
             {
                 mensaje.text = "¡COMPLETADO!";
+                bh.addNumberOfActiveButtons();
             }
         }
 
