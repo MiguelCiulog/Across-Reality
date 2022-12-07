@@ -14,6 +14,8 @@ public class DragDrop : MonoBehaviour
     Ray ray;
     [SerializeField]
     private float maxDistance = 2f;
+    public AudioClip winClip;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -37,7 +39,11 @@ public class DragDrop : MonoBehaviour
                     return;
                 }
                 focus = hit.collider.transform;
-                print("click = " + focus.name);
+                Debug.Log(focus.tag);
+                if (hit.transform.tag != "Interactable")
+                {
+                    return;
+                }
 
                 if (focus.name == "Trophy")
                 {
@@ -45,6 +51,7 @@ public class DragDrop : MonoBehaviour
                     {
                         return;
                     }
+                    audioSource.PlayOneShot(winClip);
                     SceneManager.LoadScene("LevelSelectScene");
                 }
 
