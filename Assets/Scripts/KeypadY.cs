@@ -9,6 +9,7 @@ public class KeypadY : MonoBehaviour
     public TMP_Text numeroX;
     public TMP_Text mensaje;
     public TMP_Text numeroReto;
+    public string challenge;
     private void Start()
     {
         numeroY.text = "Y";
@@ -41,7 +42,6 @@ public class KeypadY : MonoBehaviour
     }
     private void handleChallenge(int numero, int num1, int num2)
     {
-        string challenge = ModifyTextMeshPro.challengeType;
         if (challenge == "suma")
         {
             if (numero == (num1 + num2))
@@ -49,14 +49,14 @@ public class KeypadY : MonoBehaviour
                 mensaje.text = "¡COMPLETADO!";
             }
         }
-        if (challenge == "resta")
+        if (challenge == "multiplicacion")
         {
             if (numero == (num1 * num2))
             {
                 mensaje.text = "¡COMPLETADO!";
             }
         }
-        if (challenge == "multiplicacion")
+        if (challenge == "resta")
         {
             if (numero == (num1 - num2))
             {
