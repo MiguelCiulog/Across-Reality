@@ -6,7 +6,7 @@ public class BarHandler : MonoBehaviour
 {
     public GameObject bars;
     public GameObject trophy;
-    private bool isBarDown = false;
+    public static bool isBarDown = false;
     public int numberOfActiveButtons = 0;
     public void HandleBars()
     {

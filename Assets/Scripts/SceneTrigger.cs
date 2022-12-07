@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneTrigger : MonoBehaviour
 {
-    public string SceneName;
+    public string sceneName;
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneName);
+        ChangeScene(this.sceneName);
     }
 }
