@@ -9,18 +9,23 @@ public class KeypadY : MonoBehaviour
     public TMP_Text numeroX;
     public TMP_Text mensaje;
     public TMP_Text numeroReto;
-    private void Start(){
-        numeroY.text="Y";
+    private void Start()
+    {
+        numeroY.text = "Y";
     }
 
-    public void ButtonClicked(string number){
+    public void ButtonClicked(string number)
+    {
         numeroY.text = number;
         verificarCompletado();
     }
 
-    public void verificarCompletado(){
-        if (numeroX.text != "" && numeroY.text != ""){
-            if (numeroX.text != "X"){
+    public void verificarCompletado()
+    {
+        if (numeroX.text != "" && numeroY.text != "")
+        {
+            if (numeroX.text != "X")
+            {
                 string numReto = numeroReto.text;
                 string texto1 = numeroX.text;
                 string texto2 = numeroY.text;
@@ -29,11 +34,35 @@ public class KeypadY : MonoBehaviour
                 int num1 = int.Parse(texto1);
                 int num2 = int.Parse(texto2);
 
-                if (numero == (num1+num2)){
-                    mensaje.text = "¡COMPLETADO!";
-                }
+                handleChallenge(numero, num1, num2);
             }
-            
+
         }
+    }
+    private void handleChallenge(int numero, int num1, int num2)
+    {
+        string challenge = ModifyTextMeshPro.challengeType;
+        if (challenge == "suma")
+        {
+            if (numero == (num1 + num2))
+            {
+                mensaje.text = "¡COMPLETADO!";
+            }
+        }
+        if (challenge == "resta")
+        {
+            if (numero == (num1 * num2))
+            {
+                mensaje.text = "¡COMPLETADO!";
+            }
+        }
+        if (challenge == "multiplicacion")
+        {
+            if (numero == (num1 - num2))
+            {
+                mensaje.text = "¡COMPLETADO!";
+            }
+        }
+
     }
 }
